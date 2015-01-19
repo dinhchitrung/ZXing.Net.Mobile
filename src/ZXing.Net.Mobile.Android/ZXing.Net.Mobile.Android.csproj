@@ -11,7 +11,7 @@
     <FileAlignment>512</FileAlignment>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <RootNamespace>ZXing.Mobile</RootNamespace>
-    <AssemblyName>ZXing.Net.Mobile</AssemblyName>
+    <AssemblyName>ZXing.Mobile</AssemblyName>
     <TargetFrameworkVersion>v2.3</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -36,25 +36,24 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="Xamarin.Android.Support.v4">
-      <HintPath>..\..\Samples\Android\Components\xamandroidsupportv4-18-20.0.0.3\lib\android\Xamarin.Android.Support.v4.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Android.Support.v4.21.0.3.0\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <Import Project="..\ZXing.Net.Mobile.Shared\ZXing.Net.Mobile.Shared.projitems" Label="Shared" Condition="Exists('..\ZXing.Net.Mobile.Shared\ZXing.Net.Mobile.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="Properties\AssemblyVersionInfo.cs" />
+    <Compile Include="ActivityMonitor.cs" />
+    <Compile Include="PlatformChecks.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
-    <Compile Include="Android\ZxingActivity.cs" />
-    <Compile Include="Android\ZxingOverlayView.cs" />
-    <Compile Include="Android\ZxingScanner.cs" />
-    <Compile Include="Android\ZXingScannerFragment.cs" />
-    <Compile Include="Android\ZXingSurfaceView.cs" />
-    <Compile Include="Common\IMobileBarcodeScanner.cs" />
-    <Compile Include="Common\MobileBarcodeScanningOptions.cs" />
-    <Compile Include="Android\PlatformChecks.cs" />
-    <Compile Include="Common\Performance.cs" />
-    <Compile Include="Common\CameraResolution.cs" />
+    <Compile Include="ZxingActivity.cs" />
+    <Compile Include="ZxingOverlayView.cs" />
+    <Compile Include="ZxingScanner.cs" />
+    <Compile Include="ZXingScannerActivity.cs" />
+    <Compile Include="ZXingScannerFragment.cs" />
+    <Compile Include="ZXingSurfaceView.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Properties\" />
     <Folder Include="Resources\drawable\" />
     <Folder Include="Resources\values\" />
   </ItemGroup>
@@ -69,9 +68,12 @@
     <AndroidResource Include="Resources\layout\zxingscannerfragmentlayout.axml" />
   </ItemGroup>
   <ItemGroup>
-    <XamarinComponentReference Include="xamandroidsupportv4-18">
-      <Version>20.0.0.3</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
+    <AndroidResource Include="Resources\layout\zxingscannerfragmentlayout.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\zxingscanneractivitylayout.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

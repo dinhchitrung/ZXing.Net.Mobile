@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>bdd12f61-2ae0-452d-a38e-374efb96a9cc</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ZXing.Mobile</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AssemblyVersionInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CameraResolution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IMobileBarcodeScanner.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MobileBarcodeScanningOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Performance.cs" />
+  </ItemGroup>
+</Project>

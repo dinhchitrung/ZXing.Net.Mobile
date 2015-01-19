@@ -7,7 +7,7 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>ZXing.Mobile</RootNamespace>
-    <AssemblyName>ZXing.Net.Mobile</AssemblyName>
+    <AssemblyName>ZXing.Mobile</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>True</DebugSymbols>
@@ -61,27 +61,20 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
+  <Import Project="..\ZXing.Net.Mobile.Shared\ZXing.Net.Mobile.Shared.projitems" Label="Shared" Condition="Exists('..\ZXing.Net.Mobile.Shared\ZXing.Net.Mobile.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <Compile Include="AVCaptureScannerView.cs" />
+    <Compile Include="AVCaptureScannerViewController.cs" />
+    <Compile Include="IScannerViewController.cs" />
     <Compile Include="Properties\AssemblyVersionInfo.cs">
       <Link>AssemblyVersionInfo.cs</Link>
     </Compile>
-    <Compile Include="iOS\MobileBarcodeScanner.cs" />
-    <Compile Include="iOS\ZXingScannerView.cs" />
-    <Compile Include="iOS\ZXingScannerViewController.cs" />
-    <Compile Include="iOS\ZXingDefaultOverlayView.cs" />
-    <Compile Include="iOS\AVCaptureScannerView.cs" />
-    <Compile Include="iOS\AVCaptureScannerViewController.cs" />
-    <Compile Include="iOS\IScannerViewController.cs" />
-    <Compile Include="Common\IMobileBarcodeScanner.cs" />
-    <Compile Include="Common\MobileBarcodeScanningOptions.cs" />
-    <Compile Include="Common\Performance.cs" />
-    <Compile Include="Common\CameraResolution.cs" />
+    <Compile Include="ZXingDefaultOverlayView.cs" />
+    <Compile Include="ZXingScannerView.cs" />
+    <Compile Include="ZXingScannerViewController.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="iOS\" />
-    <Folder Include="Common\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ZXing.Net\zxing.ios.csproj">
       <Project>{ACB2F35D-BFDA-41B1-9B79-B82BF23F6769}</Project>

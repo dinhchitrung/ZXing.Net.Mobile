@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>ZXing.Net.Mobile</id>
-        <version>1.4.6</version>
+        <version>2.0.0</version>
         <title>ZXing.Net.Mobile Barcode Scanner</title>
         <authors>Redth</authors>
         <licenseUrl>http://raw.github.com/Redth/ZXing.Net.Mobile/master/License.md</licenseUrl>
@@ -13,17 +13,30 @@
         <summary>ZXing Barcode Scanning for your Xamarin.iOS, Xamarin.Android, and Windows Phone 8 apps!</summary>
         <copyright />
         <tags>barcode, zxing, zxing.net, qr, scan, scanning, scanner</tags>
+        <dependencies>
+            <group targetFramework="MonoAndroid">
+                <dependency id="Xamarin.Android.Support.v4" version="[21.0.3.0, 22)" />
+            </group>
+            <group targetFramework="wp8">
+                <dependency id="WriteableBitmapEx" version="[1.0.14.0, 2.0)" />
+            </group>
+        </dependencies>
     </metadata>
     <files>
-        <file src="..\Build\Release\monodroid\Xamarin.Android.Support.v4.dll" target="lib\MonoAndroid\Xamarin.Android.Support.v4.dll" />
-        <file src="..\Build\Release\monodroid\zxing.monoandroid.dll" target="lib\MonoAndroid\zxing.monoandroid.dll" />
-        <file src="..\Build\Release\monodroid\zxing.monoandroid.XML" target="lib\MonoAndroid\zxing.monoandroid.XML" />
+
+        <!--droid-->
+        <file src="..\Build\Release\monodroid\zxing.mobile.dll" target="lib\MonoAndroid\zxing.mobile.dll" />
+        <file src="..\Build\Release\monodroid\zxing.mobile.XML" target="lib\MonoAndroid\zxing.mobile.XML" />
+
+        <!--ios-->
         <file src="..\Build\Release\monodroid\ZXing.Net.Mobile.dll" target="lib\MonoAndroid\ZXing.Net.Mobile.dll" />
         <file src="..\Build\Release\monotouch\zxing.monotouch.dll" target="lib\MonoTouch\zxing.monotouch.dll" />
         <file src="..\Build\Release\monotouch\ZXing.Net.Mobile.dll" target="lib\MonoTouch\ZXing.Net.Mobile.dll" />
+
+        <!--wp8-->
         <file src="..\Build\Release\wp8.0\WriteableBitmapExWinPhone.dll" target="lib\wp8\WriteableBitmapExWinPhone.dll" />
         <file src="..\Build\Release\wp8.0\zxing.wp8.0.dll" target="lib\wp8\zxing.wp8.0.dll" />
         <file src="..\Build\Release\wp8.0\zxing.wp8.0.XML" target="lib\wp8\zxing.wp8.0.XML" />
-        <file src="..\Build\Release\wp8.0\ZXingNetMobile.dll" target="lib\wp8\ZXingNetMobile.dll" />
+        <file src="..\Build\Release\wp8.0\ZXingNetMobile.dll" target="lib\wp8\zxing.mobile.dll" />
     </files>
 </package>
