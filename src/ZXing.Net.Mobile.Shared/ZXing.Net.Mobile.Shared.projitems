@@ -14,5 +14,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)IMobileBarcodeScanner.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MobileBarcodeScanningOptions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Performance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ZXingScanner.cs" />
   </ItemGroup>
 </Project>
